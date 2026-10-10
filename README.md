@@ -7,12 +7,14 @@ Its goal is to rewrite text while preserving meaning under configurable lexical 
 Examples include:
 
 - Germanic-root English
+
+Future language generation support inlcudes:
+
 - Native Japanese vocabulary
 - Native Korean vocabulary
 - Persian with reduced Arabic loanwords
 
 This project explores NLP, lexical constraints, and controllable LLM generation.
-
 
 
 
