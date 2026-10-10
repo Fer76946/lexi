@@ -1,28 +1,35 @@
-from lexi.engine import rewrite, explain
+from lexi.llm import rewrite_with_ai
 
-print("Welcome to Lexi!")
 
-while True:
-    text = input("\nEnter English text (or 'quit'): ")
+def main():
+    print("Welcome to Lexi!")
 
-    if text.lower() == "quit":
-        break
+    while True:
+        text = input("\nEnter text (or 'quit'): ")
 
-    result = rewrite(text)
-    explanations = explain(text)
+        if text.lower() == "quit":
+            break
 
-    print("\nLexi:", result)
+        if not text.strip():
+            continue
 
-    if explanations:
-        print("\nSubstitution explanations:")
+        try:
+            intensity = int(input("Rewriting intensity (0-100): "))
 
-        for item in explanations:
-            print(
-                f"- {item['original']} → {item['replacement']}"
+            result = rewrite_with_ai(
+                text,
+                language="english",
+                intensity=intensity
             )
-            print(
-                f"  Origin: {item['origin']}"
-            )
-            print(
-                f"  Replacement origin: {item['replacement_origin']}"
-            )
+
+            print("\nLexi:", result)
+
+        except ValueError:
+            print("Please enter a valid number between 0 and 100.")
+
+        except Exception as error:
+            print("Error:", error)
+
+
+if __name__ == "__main__":
+    main()
