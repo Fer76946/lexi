@@ -17,13 +17,6 @@ Future language generation support inlcudes:
 This project explores NLP, lexical constraints, and controllable LLM generation.
 
 
-
-# Lexi
-
-Lexi is a controlled language generation framework.
-
-Its goal is to rewrite text while preserving meaning under configurable lexical constraints.
-
 ## Current Status
 
 🚧 Early development
